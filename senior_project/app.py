@@ -19,27 +19,27 @@ class Window(QWidget):
  
         # Create our Widgets
         title_label = QLabel()
-        title_label.setFont(QFont("Calibri", 22))
+        title_label.setFont(QFont("Playfair Display", 22))
 
-        description = "description"
-        description += " description."
+        description = "Search the Potion or House by"
+        description += " name."
         description_label = QLabel(description)
-        description_label.setFont(QFont("Calibri", 14))
+        description_label.setFont(QFont("Playfair Display", 14))
 
         search_layout = QHBoxLayout()
         self.search_field = QLineEdit()
-        self.search_field.setFont(QFont("Calibri", 12))
-        self.search_field.setPlaceholderText("description")
+        self.search_field.setFont(QFont("Playfair Display", 12))
+        self.search_field.setPlaceholderText("Name of Potion or House")
 
         search_button = QPushButton("Search")
-        search_button.setFont(QFont("Calibri", 12))
+        search_button.setFont(QFont("Playfair Display", 12))
 
 
         search_layout.addWidget(self.search_field)
         search_layout.addWidget(search_button)
 
         results_text = QTextEdit("Results. ")
-        results_text.setFont(QFont("Calibri", 12))
+        results_text.setFont(QFont("Playfair Display", 12))
 
         #Add all our widgets
         layout.addWidget(title_label)
