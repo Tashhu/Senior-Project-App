@@ -18,13 +18,14 @@ class Window(QWidget):
         self.setLayout(layout)
  
         # Create our Widgets
-        title_label = QLabel()
+        title_label = QLabel("Harry Potter Houses and Potions")
+        title_label.setAlignment(Qt.AlignmentFlag.AlignTop)
         title_label.setFont(QFont("Playfair Display", 22))
 
         description = "Search the Potion or House by"
-        description += " name."
+        description += " Name."
         description_label = QLabel(description)
-        description_label.setFont(QFont("Playfair Display", 14))
+        description_label.setFont(QFont("Playfair Display", 12))
 
         search_layout = QHBoxLayout()
         self.search_field = QLineEdit()
