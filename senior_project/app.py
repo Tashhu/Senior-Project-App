@@ -9,7 +9,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
         self.resize(300, 400)
-        self.setWindowTitle("The (title) App")
+        self.setWindowTitle("The Harry Potter App")
         self.setWindowIcon(QIcon("icon.jpg"))
         self.uI()
 
