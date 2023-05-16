@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import (QApplication, QVBoxLayout, QWidget,
 from PyQt6.QtGui import QIcon, QFont
 from PyQt6.QtCore import Qt
 import sys
+import controller
  
 class Window(QWidget):
     def __init__(self):
@@ -34,29 +35,32 @@ class Window(QWidget):
 
         search_button = QPushButton("Search")
         search_button.setFont(QFont("Playfair Display", 12))
+        search_button.clicked.connect(self.search)
 
 
         search_layout.addWidget(self.search_field)
         search_layout.addWidget(search_button)
 
-        results_text = QTextEdit("Results. ")
-        results_text.setFont(QFont("Playfair Display", 12))
+        self.results_text = QTextEdit("Results. ")
+        self.results_text.setFont(QFont("Playfair Display", 12))
 
         #Add all our widgets
         layout.addWidget(title_label)
         layout.addWidget(description_label)
         layout.addLayout(search_layout)
-        layout.addWidget(results_text)
+        layout.addWidget(self.results_text)
 
 def search(self):
     """get the search text and use it to make an API call to get
     the results for a search"""
 
     # get the user input
-   
+    search_text = self.search_field.text()
 
-   # Make an API call
-
+    # Make an API call
+    search_results = controller.make_call(search_text)
+    self.results_text.setText(search_results)
+    self.results_text.toHtml()
 
 
 
