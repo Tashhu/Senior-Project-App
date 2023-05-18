@@ -50,17 +50,17 @@ class Window(QWidget):
         layout.addLayout(search_layout)
         layout.addWidget(self.results_text)
 
-def search(self):
-    """get the search text and use it to make an API call to get
-    the results for a search"""
+    def search(self):
+        """get the search text and use it to make an API call to get
+        the results for a search"""
 
-    # get the user input
-    search_text = self.search_field.text()
+        # get the user input
+        search_text = self.search_field.text()
 
-    # Make an API call
-    search_results = controller.make_call(search_text)
-    self.results_text.setText(search_results)
-    self.results_text.toHtml()
+        # Make an API call
+        search_results = controller.make_call(search_text)
+        self.results_text.setText(search_results)
+        self.results_text.toHtml()
 
 
 

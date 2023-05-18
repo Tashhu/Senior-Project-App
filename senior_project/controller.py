@@ -1,21 +1,35 @@
 import requests
 
-domain = "https://wizard-world-api.herokuapp.com/"
+
 
 def make_call(endpoint: str, query: str = "") -> str:
+    domain = "https://wizard-world-api.herokuapp.com/"
     url = domain + endpoint 
 
     response = requests.get(url)
     if response.ok:
-        results = format_results(response)
+        results = format_results(response, endpoint)
+    else:
+        results = "<p><b><i> Sorry there was a problem connecting to the:"
+        results += "database.</i></b></p>"
+    return results
 
-def format_results(results) -> str:
+def format_results(results, endpoint) -> str:
     results = results.json()
-    formatted_results = ""
+    formatted_results = "<p>"
     for item in results:
-        title = item.get("title")
-        media = item.get("formats")
-        formatted_results += "<p><b>"
+        if endpoint == "Houses":
+            house = item.get("name")
+            colors = item.get("houseColours")
+            element = item.get("element")
+            animal = item.get("animal")
+
+            formatted_results += f"<b>House</b>: {house}<br><b>colors</b>:"
+            formatted_results += f" {colors}"
+        elif endpoint == "Elixirs":
+            formatted_results += "<b>"
+        formatted_results += f"</p>"
+    return formatted_results
 
 if __name__ == "__main__":
     make_call("Houses")
