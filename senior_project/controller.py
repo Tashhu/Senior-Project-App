@@ -26,7 +26,11 @@ def format_results(results, endpoint) -> str:
 
             formatted_results += f"<b>House</b>: {house}<br><b>colors</b>:"
             formatted_results += f" {colors}"
+            formatted_results += f"<br><b>element</b>: {element}<br><b>"
+            formatted_results += f"animal</b>: {animal}"
         elif endpoint == "Elixirs":
+
+
             formatted_results += "<b>"
         formatted_results += f"</p>"
     return formatted_results

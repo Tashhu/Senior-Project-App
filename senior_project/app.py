@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import (QApplication, QVBoxLayout, QWidget, 
-                             QLabel, QHBoxLayout, QLineEdit,
+                             QLabel, QHBoxLayout, QComboBox,
                              QPushButton, QTextEdit)
 from PyQt6.QtGui import QIcon, QFont
 from PyQt6.QtCore import Qt
@@ -29,7 +29,8 @@ class Window(QWidget):
         description_label.setFont(QFont("Playfair Display", 12))
 
         search_layout = QHBoxLayout()
-        self.search_field = QLineEdit()
+        self.search_field = QComboBox()
+        self.search_field.addItems(["Houses", "Elixirs", "Spells"])
         self.search_field.setFont(QFont("Playfair Display", 12))
         self.search_field.setPlaceholderText("Name of Potion or House")
 
@@ -55,7 +56,7 @@ class Window(QWidget):
         the results for a search"""
 
         # get the user input
-        search_text = self.search_field.text()
+        search_text = self.search_field.currentText()
 
         # Make an API call
         search_results = controller.make_call(search_text)
