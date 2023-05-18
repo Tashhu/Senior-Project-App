@@ -24,10 +24,10 @@ def format_results(results, endpoint) -> str:
             element = item.get("element")
             animal = item.get("animal")
 
-            formatted_results += f"<b>House</b>: {house}<br><b>colors</b>:"
+            formatted_results += f"<b>House</b>: {house}<br><b>Colors</b>:"
             formatted_results += f" {colors}"
-            formatted_results += f"<br><b>element</b>: {element}<br><b>"
-            formatted_results += f"animal</b>: {animal}"
+            formatted_results += f"<br><b>Element</b>: {element}<br><b>"
+            formatted_results += f"Animal</b>: {animal}"
         elif endpoint == "Elixirs":
 
 
