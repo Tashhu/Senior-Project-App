@@ -1,7 +1,6 @@
 import requests
 
 
-
 def make_call(endpoint: str, query: str = "") -> str:
     domain = "https://wizard-world-api.herokuapp.com/"
     url = domain + endpoint 
@@ -24,11 +23,25 @@ def format_results(results, endpoint) -> str:
             element = item.get("element")
             animal = item.get("animal")
 
-            formatted_results += f"<b>House</b>: {house}<br><b>Colors</b>:"
-            formatted_results += f" {colors}"
-            formatted_results += f"<br><b>Element</b>: {element}<br><b>"
-            formatted_results += f"Animal</b>: {animal}"
+            formatted_results += f"<b>House</b>: {house}<br>"
+            formatted_results += f"<b>Colors</b>: {colors}<br>"
+            formatted_results += f"<b>Element</b>: {element}<br>"
+            formatted_results += f"<b>Animal</b>: {animal}<br><br>"
+
         elif endpoint == "Elixirs":
+            elixir = item.get("name")
+            purpose = item.get("effect")
+            ingredients = item.get("ingredients")
+            effects = item.get("sideEffects")
+
+            formatted_results += f"<b>Name</b>: {elixir}<br>"
+            formatted_results += f"<b>Effect</b>: {purpose}<br>"
+            formatted_results += f"<b>Ingredients</b>: {ingredients}<br>"
+            formatted_results += f"<b>Side Effects</b>: {effects}<br><br>"
+
+        elif endpoint == "Spells":
+
+
 
 
             formatted_results += "<b>"
