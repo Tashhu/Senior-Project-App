@@ -40,11 +40,16 @@ def format_results(results, endpoint) -> str:
             formatted_results += f"<b>Side Effects</b>: {effects}<br><br>"
 
         elif endpoint == "Spells":
+            spell = item.get("name")
+            chant = item.get("incantation")
+            influence = item.get("effect")
+            inventor = item.get("creator")
 
+            formatted_results += f"<b>Name</b>: {spell}<br>"
+            formatted_results += f"<b>Incantation</b>: {chant}<br>"
+            formatted_results += f"<b>Effect</b>: {influence}<br>"
+            formatted_results += f"<b>Creator</b>: {inventor}<br><br>"
 
-
-
-            formatted_results += "<b>"
         formatted_results += f"</p>"
     return formatted_results
 

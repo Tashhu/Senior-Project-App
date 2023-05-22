@@ -69,6 +69,9 @@ class Window(QWidget):
 def main():
     app = QApplication(sys.argv)
     window = Window()
+
+    #app.setStyleSheet
+    
     window.show()
     sys.exit(app.exec())
 
