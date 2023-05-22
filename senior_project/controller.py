@@ -31,13 +31,7 @@ def format_results(results, endpoint) -> str:
         elif endpoint == "Elixirs":
             elixir = item.get("name")
             purpose = item.get("effect")
-            ingredients = item.get("ingredients")
-            ingredientList = "<ul>"
-            for i in ingredients:
-                name = i.get("name")
-                ingredientList += f"<li>{name}</li>"
-            ingredientList += "</ul>"
-            ingredients = ingredientList
+            ingredients = get_ingredients(item)
             effects = item.get("sideEffects")
 
             formatted_results += f"<b>Name</b>: {elixir}<br>"
@@ -58,6 +52,16 @@ def format_results(results, endpoint) -> str:
 
         formatted_results += f"</p>"
     return formatted_results
+
+def get_ingredients(item):
+    ingredients = item.get("ingredients")
+    ingredientList = "<ul>"
+    for i in ingredients:
+        name = i.get("name")
+        ingredientList += f"<li>{name}</li>"
+    ingredientList += "</ul>"
+    ingredients = ingredientList
+    return ingredients
 
 if __name__ == "__main__":
     make_call("Houses")
