@@ -60,6 +60,7 @@ class Window(QWidget):
 
         # Make an API call
         search_results = controller.make_call(search_text)
+        self.resize(300, 600)
         self.results_text.setText(search_results)
         self.results_text.toHtml()
 

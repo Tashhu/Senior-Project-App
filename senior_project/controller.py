@@ -45,10 +45,10 @@ def format_results(results, endpoint) -> str:
             influence = item.get("effect")
             inventor = item.get("creator")
 
-            formatted_results += f"<b>Name</b>: {spell}<br>"
+            formatted_results += f"<p><b>Name</b>: {spell}<br>"
             formatted_results += f"<b>Incantation</b>: {chant}<br>"
             formatted_results += f"<b>Effect</b>: {influence}<br>"
-            formatted_results += f"<b>Creator</b>: {inventor}<br><br>"
+            formatted_results += f"<b>Creator</b>: {inventor}</p>"
 
         formatted_results += f"</p>"
     return formatted_results
