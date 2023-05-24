@@ -71,6 +71,26 @@ def main():
     window = Window()
 
     #app.setStyleSheet
+    app.setStyleSheet("""
+        QWidget {
+            background-color: #fff7eb;
+            color: #111111;
+            padding: 10px;
+        }
+        QTextEdit {
+            background-color: #eaece5;
+        }
+        QComboBox {
+            background-color: #c0ded9;
+        }
+        QPushButton {
+            background-color: #b2c2bf;
+        }
+
+
+    
+    """)
+
     
     window.show()
     sys.exit(app.exec())
