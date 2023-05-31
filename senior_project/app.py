@@ -32,7 +32,6 @@ class Window(QWidget):
         self.search_field = QComboBox()
         self.search_field.addItems(["Houses", "Elixirs", "Spells"])
         self.search_field.setFont(QFont("Playfair Display", 12))
-        self.search_field.setPlaceholderText("Name of Potion or House")
 
         search_button = QPushButton("Search")
         search_button.setFont(QFont("Playfair Display", 12))
